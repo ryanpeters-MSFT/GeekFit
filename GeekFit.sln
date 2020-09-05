@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekFit", "GeekFit\GeekFit.csproj", "{8BFBA23E-A2DA-410C-A79C-DE999A06FBBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekFit.Services", "GeekFit.Services\GeekFit.Services.csproj", "{C3E85670-9AE0-450F-BF14-F40844E73A8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekFit.Web", "GeekFit.Web\GeekFit.Web.csproj", "{25EEBA41-7BAB-4AE9-A468-BD08953B55BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BFBA23E-A2DA-410C-A79C-DE999A06FBBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BFBA23E-A2DA-410C-A79C-DE999A06FBBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BFBA23E-A2DA-410C-A79C-DE999A06FBBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BFBA23E-A2DA-410C-A79C-DE999A06FBBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3E85670-9AE0-450F-BF14-F40844E73A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E85670-9AE0-450F-BF14-F40844E73A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E85670-9AE0-450F-BF14-F40844E73A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E85670-9AE0-450F-BF14-F40844E73A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25EEBA41-7BAB-4AE9-A468-BD08953B55BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25EEBA41-7BAB-4AE9-A468-BD08953B55BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25EEBA41-7BAB-4AE9-A468-BD08953B55BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25EEBA41-7BAB-4AE9-A468-BD08953B55BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		LessCompiler = 25eeba41-7bab-4ae9-a468-bd08953b55bd
+		SolutionGuid = {10C6D541-3458-4EF8-9CDA-73EBE3393BE6}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.binarydad.com:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GeekFit\\GeekFit.csproj
+		SccProjectName1 = GeekFit
+		SccLocalPath1 = GeekFit
+		SccProjectUniqueName2 = GeekFit.Services\\GeekFit.Services.csproj
+		SccProjectName2 = GeekFit.Services
+		SccLocalPath2 = GeekFit.Services
+		SccProjectUniqueName3 = GeekFit.Web\\GeekFit.Web.csproj
+		SccProjectName3 = GeekFit.Web
+		SccLocalPath3 = GeekFit.Web
+	EndGlobalSection
+EndGlobal

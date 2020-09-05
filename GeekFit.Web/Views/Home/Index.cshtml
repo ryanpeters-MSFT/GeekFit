@@ -1,0 +1,30 @@
+﻿@model HomeViewModel
+
+<div class="row-set">
+
+    @foreach (var user in Model.Users)
+    {
+        <div class="row">
+            <div class="col-xs-3">
+                @Html.ActionLink(user.Name, "List", "Workout", new { userId = user.Id }, null)
+            </div>
+            <div class="col-xs-9 text-right">
+
+                @if (!user.Workouts.Any())
+                {
+                    <em class="light">No workouts found</em>
+                }
+                else
+                {
+                    var lastWorkout = user.Workouts
+                        .OrderByDescending(w => w.Date)
+                        .FirstOrDefault();
+
+                    <div><span class="light">Last workout was </span><strong>@lastWorkout.Date.FriendlyAge()</strong></div>
+                }
+
+            </div>
+        </div>
+    }
+
+</div>

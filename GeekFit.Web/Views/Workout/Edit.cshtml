@@ -1,0 +1,47 @@
+﻿@model UserWorkout
+@{
+    ViewBag.Title = $"Editing {Model.Workout.Name}";
+
+    var properties = Model.Properties
+        .OrderBy(p => p.Property.Order);
+}
+
+<p class="alert alert-info">
+    Editing your <strong>@Html.ActionLink(Model.Workout.Name, "view", new { workoutId = Model.WorkoutId })</strong> workout from <strong>@Model.Date.FriendlyDate().</strong>
+</p>
+
+@using (Html.BeginForm())
+{
+    var i = 0;
+
+    foreach (var property in properties)
+    {
+        <div class="form-group">
+            <input type="hidden" name="properties[@i].Id" value="@property.Id" />
+            <label>@property.Property</label>
+            <input type="number" step="0.1" class="form-control" name="properties[@(i++)].Value" autocomplete="off" value="@property.GetValue()" />
+        </div>
+    }
+
+    <div class="form-group">
+        <label>Comment</label>
+        <input type="text" class="form-control" name="comment" autocomplete="off" value="@Model.Comment" />
+    </div>
+
+    <div class="form-group">
+        <label>Date</label>
+        <input type="date" class="form-control" name="date" required autocomplete="off" value="@Model.Date.ToString("yyyy-MM-dd")" />
+    </div>
+
+    <div class="btn-set btn-group-lg">
+        <a href="@Url.Action("View", new { workoutId = Model.WorkoutId })" class="btn btn-info">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="@Url.Action("Delete", new { userWorkoutId = Model.Id })" class="btn btn-danger confirm">
+            <span class="glyphicon glyphicon-remove"></span>
+        </a>
+        <button type="submit" class="btn btn-success">
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+    </div>
+}

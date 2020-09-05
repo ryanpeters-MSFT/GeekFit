@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Workout>
+@{
+    ViewBag.Title = "Select Workout";
+
+    var groups = Model.GroupBy(w => w.Type);
+}
+
+<div class="btn-set btn-group-lg pull-right">
+    <a href="@Url.Action("List")" class="btn btn-info">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+</div>
+
+@foreach (var group in groups)
+{
+    var workouts = group.OrderBy(w => w.Name);
+
+    <h2>@group.Key.GetDescription()</h2>
+
+    <div class="row-set">
+
+        @foreach (var workout in workouts)
+        {
+            <div class="row">
+                <div class="col-xs-12">@Html.ActionLink(workout.Name, "Add", new { workoutId = workout.Id })</div>
+            </div>
+        }
+    </div>
+}
+

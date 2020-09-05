@@ -1,0 +1,70 @@
+﻿@model ICollection<UserWorkout>
+@{
+    ViewBag.Title = "Your Workouts";
+
+    var dayGroups = Model
+        .GroupBy(w => w.Date.Date)
+        .OrderByDescending(w => w.Key);
+}
+
+<div class="btn-set btn-group-lg">
+    <a class="btn btn-success" href="@Url.Action("Select")">
+        <span class="glyphicon glyphicon-plus"></span>
+    </a>
+</div>
+
+@foreach (var dayGroup in dayGroups)
+{
+    var totalTime = dayGroup
+        .SelectMany(g => g.Properties)
+        .Where(p => p.Property.Type == PropertyType.Time && p.UserWorkout.Workout.Type == WorkoutType.Cardio)
+        .Sum(p => p.Value);
+
+    var totalWorkouts = dayGroup.Count();
+
+    <div class="day-summary">
+        <h2>@dayGroup.Key.FriendlyDate()</h2>
+        <div class="total-workouts">
+            <div>
+                <strong>@totalWorkouts</strong> @(totalWorkouts == 1 ? "Workout" : "Workouts")
+            </div>
+
+            @if (totalTime.HasValue && totalTime > 0)
+            {
+                <div><strong>@totalTime.Value.ToString("#") min</strong> cardio</div>
+            }
+        </div>
+    </div>
+
+    <div class="row-set">
+
+        @foreach (var workout in dayGroup.OrderBy(w => w.Workout.Name))
+        {
+            var properties = workout.Properties
+                .Where(p => p.Value.HasValue)
+                .OrderBy(p => p.Property.Order);
+
+            <div class="row">
+                <div class="col-xs-7">
+                    @Html.ActionLink(workout.Workout.Name, "View", new { workoutId = workout.WorkoutId })
+                    <small>@workout.Comment</small>
+                </div>
+                <div class="col-xs-5 properties light">
+                    @if (properties.Any())
+                    {
+                        <ul>
+                            @foreach (var property in properties)
+                            {
+                                <li>@property.Property.Name <span><strong>@property.GetValue()</strong> @property.Property.Unit</span></li>
+                            }
+                        </ul>
+                    }
+                </div>
+
+            </div>
+        }
+
+    </div>
+}
+
+<em class="footer-info">Showing workouts from the past 4 weeks.</em>

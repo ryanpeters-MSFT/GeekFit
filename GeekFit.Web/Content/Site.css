@@ -1,0 +1,250 @@
+body {
+  margin: 60px 0 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+body:after {
+  content: '\00a0';
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  display: block;
+}
+a {
+  transition: color ease-in-out 0.2s;
+}
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+h1 {
+  background-color: #444;
+  position: fixed;
+  top: 0;
+  padding: 10px 15px;
+  z-index: 100;
+  margin: 0;
+  width: 100%;
+  display: table;
+}
+h1 a,
+h1 span {
+  display: table-cell;
+  vertical-align: middle;
+}
+h1 a {
+  color: #fff;
+  transition: padding-left ease-in-out 0.2s;
+  width: 160px;
+}
+h1 a:hover,
+h1 a:visited {
+  color: #fff;
+  padding-left: 5px;
+}
+h1 span {
+  border-left: 1px solid #aaa;
+  color: #ccc;
+  font-size: 22px;
+  padding-left: 20px;
+}
+h1 strong {
+  font-weight: 600;
+}
+h2 {
+  margin: 10px 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #666;
+  text-transform: capitalize;
+}
+h2:not(:first-of-type) {
+  margin-top: 20px;
+}
+.day-summary {
+  display: table;
+  width: 100%;
+  margin: 10px 0;
+}
+.day-summary h2,
+.day-summary > div {
+  vertical-align: middle;
+  display: table-cell;
+}
+.total-workouts {
+  font-weight: 300;
+  font-size: 14px;
+  color: #aaa;
+  text-align: right;
+  line-height: 16px;
+}
+input[type=date].form-control {
+  line-height: normal;
+}
+label {
+  text-transform: capitalize;
+  font-size: 16px;
+}
+#content {
+  padding: 15px;
+}
+.footer-info {
+  display: block;
+  clear: both;
+  padding-top: 10px;
+}
+.padding {
+  padding: 15px;
+}
+.light {
+  color: #999;
+}
+.btn-set {
+  clear: both;
+  z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  text-align: right;
+}
+.btn-set .btn {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  padding: 14px 0;
+  border-radius: 50%;
+  border: 0;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+}
+.btn-set .btn .glyphicon {
+  font-size: 30px;
+  top: 0;
+}
+.btn-set .btn:not(:last-child) {
+  margin-right: 10px;
+}
+/*#region Bootstrap */
+.form-control {
+  font-size: 16px;
+  padding: 10px;
+  height: auto;
+}
+.btn {
+  font-weight: 600;
+  transition: background-color ease-in-out 0.1s;
+}
+.row {
+  padding: 10px 0;
+  display: table;
+  font-size: 16px;
+  width: 100%;
+  margin: 0;
+}
+.row small {
+  display: block;
+  padding: 5px 0 0 10px;
+  line-height: 16px;
+}
+.row ul,
+.row li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.row ul {
+  margin: 0;
+}
+.row .properties ul {
+  float: right;
+  text-align: right;
+}
+.row .properties ul li {
+  width: 160px;
+  line-height: 20px;
+}
+.row .properties ul strong {
+  color: #000;
+}
+.row .properties ul span {
+  width: 70px;
+  padding-left: 10px;
+  text-align: left;
+  float: right;
+}
+.row > div:first-child a {
+  font-size: 22px;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.row > div[class*=col] {
+  display: table-cell;
+  float: none;
+  vertical-align: middle;
+}
+/*#endregion */
+@media (min-width: 691px) {
+  h2:not(:first-of-type) {
+    clear: both;
+  }
+  .row-set {
+    margin: 0;
+  }
+  .form-group {
+    float: left;
+    width: 49%;
+  }
+  .form-group:nth-child(odd) {
+    margin-right: 1%;
+  }
+  .form-group:nth-child(even) {
+    margin-left: 1%;
+  }
+  .row {
+    float: left;
+    width: 49%;
+    background-color: #d9edf7;
+    border-radius: 4px;
+    margin-bottom: 2%;
+    transition: background-color ease-in-out 0.1s;
+  }
+  .row:hover {
+    background-color: #dff0d8;
+  }
+  .row:nth-child(odd) {
+    margin-right: 1%;
+    clear: both;
+  }
+  .row:nth-child(even) {
+    margin-left: 1%;
+  }
+}
+@media (max-width: 690px) {
+  body {
+    margin: 50px 0 70px;
+  }
+  h1 {
+    font-size: 25px;
+    padding: 10px;
+  }
+  h1 a {
+    width: 110px;
+  }
+  h1 span {
+    padding-left: 15px;
+    font-size: 16px;
+  }
+  #content {
+    padding: 10px;
+  }
+  .row-set {
+    margin: 0 -10px;
+  }
+  .row > div[class*=col] {
+    padding: 0 10px;
+  }
+  .row:nth-child(odd) {
+    background-color: #f6f6f6;
+  }
+}

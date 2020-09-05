@@ -1,0 +1,39 @@
+﻿@model UserWorkout
+@{
+    ViewBag.Title = String.Format("Add {0} Workout", Model.Workout.Name);
+
+    var properties = Model.Properties.OrderBy(p => p.Property.Order);
+}
+
+@if (Model.Date > DateTime.MinValue)
+{
+    <p class="alert alert-info">Your previous <strong>@Html.ActionLink(Model.Workout.Name, "view", new { workoutId = Model.WorkoutId })</strong> workout from <strong>@Model.Date.FriendlyDate()</strong> has been pre-filled below.</p>
+}
+
+@using (Html.BeginForm())
+{
+    var i = 0;
+
+    foreach (var property in properties)
+    {
+        <div class="form-group">
+            <input type="hidden" name="properties[@i].ID" value="@property.Property.Id" />
+            <label>@property.Property</label>
+            <input type="number" step="0.1" class="form-control" autocomplete="off" name="properties[@(i++)].Value" value="@property.GetValue()" />
+        </div>
+    }
+
+    <div class="form-group">
+        <label>Comment</label>
+        <input type="text" class="form-control" autocomplete="off" name="comment" value="@Model.Comment" />
+    </div>
+
+    <div class="btn-set btn-group-lg">
+        <a href="@Url.Action("List")" class="btn btn-info">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <button type="submit" class="btn btn-success">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </div>
+}
