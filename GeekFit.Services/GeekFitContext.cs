@@ -5,7 +5,7 @@ namespace GeekFit.Services
 
     public class GeekFitContext : DbContext
     {
-        public GeekFitContext() : base("name=GeekFitContext")
+        public GeekFitContext() : base("server=192.168.1.145;port=3306;database=geekfit;uid=root;password=rex30638")
         {
             Configuration.LazyLoadingEnabled = false;
         }
