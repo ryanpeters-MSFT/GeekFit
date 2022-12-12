@@ -1,4 +1,5 @@
-﻿@model ICollection<UserWorkout>
+@using Microsoft.AspNetCore.Mvc.Razor
+@model ICollection<UserWorkout>
 @{
     ViewBag.Title = Model.FirstOrDefault().Workout.Name;
 
@@ -12,30 +13,31 @@
         .ToList();
 }
 
-@helper WorkoutRow(UserWorkout workout)
-{
-    var properties = workout.Properties
-        .Where(p => p.Value.HasValue)
-        .OrderBy(p => p.Property.Order);
-
-    <div class="row">
-        <div class="col-xs-7">
-            @Html.ActionLink(workout.Date.FriendlyDate(), "Edit", new { userWorkoutId = workout.Id })
-            <small>@workout.Comment</small>
-        </div>
-        <div class="col-xs-5 properties light">
-            @if (properties.Any())
-            {
-                <ul>
-                    @foreach (var property in properties)
-                    {
-                        <li>@property.Property.Name <span><strong>@property.GetValue()</strong> @property.Property.Unit</span></li>
-                    }
-                </ul>
-            }
-        </div>
-    </div>
-}
+@{ HelperResult WorkoutRow(UserWorkout workout)
+	{
+	    var properties = workout.Properties
+	        .Where(p => p.Value.HasValue)
+	        .OrderBy(p => p.Property.Order);
+	
+	    <div class="row">
+	        <div class="col-xs-7">
+	            @Html.ActionLink(workout.Date.FriendlyDate(), "Edit", new { userWorkoutId = workout.Id })
+	            <small>@workout.Comment</small>
+	        </div>
+	        <div class="col-xs-5 properties light">
+	            @if (properties.Any())
+	            {
+	                <ul>
+	                    @foreach (var property in properties)
+	                    {
+	                        <li>@property.Property.Name <span><strong>@property.GetValue()</strong> @property.Property.Unit</span></li>
+	                    }
+	                </ul>
+	            }
+	        </div>
+	    </div>
+		return new HelperResult(w => Task.CompletedTask);
+} }
 
 <div class="btn-set btn-group-lg">
     <a href="@Url.Action("List")" class="btn btn-info">

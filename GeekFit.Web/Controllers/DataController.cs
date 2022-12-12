@@ -1,12 +1,12 @@
 ﻿using GeekFit.Models;
 using GeekFit.Services;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Web.Http;
 
 namespace GeekFit.Web.Controllers
 {
     [RoutePrefix("data")]
-    public class DataController : ApiController
+    public class DataController : ControllerBase
     {
         private readonly WorkoutService workoutService;
 

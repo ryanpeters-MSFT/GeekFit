@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "GeekFit.Web": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:58553;http://localhost:58554"
+    }
+  }
+}

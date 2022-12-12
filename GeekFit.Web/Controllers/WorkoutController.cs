@@ -1,10 +1,10 @@
 ﻿using GeekFit.Models;
 using GeekFit.Services;
 using GeekFit.Web.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
 
 namespace GeekFit.Web.Controllers
 {

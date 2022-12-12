@@ -1,6 +1,6 @@
 ﻿using GeekFit.Services;
 using GeekFit.Web.Models;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace GeekFit.Web.Controllers
 {
