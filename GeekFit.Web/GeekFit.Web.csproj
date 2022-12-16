@@ -26,21 +26,33 @@
   <ItemGroup>
     <None Include="compilerconfig.json" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
-    <Content Update="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <None Include="wwwroot\Content\bootstrap-theme.css" />
+    <None Include="wwwroot\Content\bootstrap-theme.css.map" />
+    <None Include="wwwroot\Content\bootstrap-theme.min.css" />
+    <None Include="wwwroot\Content\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\Content\bootstrap.css" />
+    <None Include="wwwroot\Content\bootstrap.css.map" />
+    <None Include="wwwroot\Content\bootstrap.min.css" />
+    <None Include="wwwroot\Content\bootstrap.min.css.map" />
+    <None Include="wwwroot\Content\Images\Icons\favicon.png" />
+    <None Include="wwwroot\Content\Site.css" />
+    <None Include="wwwroot\Content\Site.less" />
+    <None Include="wwwroot\Content\Site.min.css" />
+    <None Include="wwwroot\Scripts\bootstrap.js" />
+    <None Include="wwwroot\Scripts\bootstrap.min.js" />
+    <None Include="wwwroot\Scripts\jquery-1.10.2.intellisense.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.intellisense.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.min.map" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.slim.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="wwwroot\Scripts\jquery-3.3.1.slim.min.map" />
+    <None Include="wwwroot\Scripts\modernizr-2.6.2.js" />
+    <None Include="wwwroot\Scripts\site.js" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.WebApiCompatShim" Version="2.2.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="System.Management" Version="7.0.0" />

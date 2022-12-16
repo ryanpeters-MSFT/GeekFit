@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace GeekFit.Web.Controllers
 {
-    [RoutePrefix("{userId}")]
+    [Route("{userId}")]
     public class WorkoutController : BaseController
     {
         private readonly WorkoutService workoutService;
@@ -18,7 +18,7 @@ namespace GeekFit.Web.Controllers
             this.workoutService = workoutService;
         }
 
-        [Route]
+        //[Route]
         public ActionResult List(Guid userId)
         {
             var minDate = DateTime.Now.AddDays(-28);

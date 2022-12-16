@@ -5,7 +5,7 @@ namespace GeekFit.Web.Controllers
 {
     public class BaseController : Controller
     {
-        protected RedirectToRouteResult RedirectToList()
+        protected RedirectToActionResult RedirectToList()
         {
             return RedirectToAction("list");
         }

@@ -9,9 +9,9 @@ namespace GeekFit.Services
     {
         private readonly GeekFitContext _context;
 
-        public WorkoutService()
+        public WorkoutService(GeekFitContext context)
         {
-            _context = new GeekFitContext();
+            _context = context;
         }
 
         public IQueryable<User> GetUsers()

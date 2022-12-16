@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace GeekFit.Web.Controllers
 {
-    [RoutePrefix("data")]
+    [Route("data")]
     public class DataController : ControllerBase
     {
         private readonly WorkoutService workoutService;

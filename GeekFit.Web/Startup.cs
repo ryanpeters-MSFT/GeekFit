@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GeekFit.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -38,6 +39,9 @@ namespace GeekFit.Web
                 {
                     options.UseMemberCasing();
                 });
+
+            services.AddScoped<WorkoutService>();
+            services.AddScoped<GeekFitContext>();
 
         }
 
