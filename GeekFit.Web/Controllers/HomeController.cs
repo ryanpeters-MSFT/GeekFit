@@ -13,7 +13,6 @@ namespace GeekFit.Web.Controllers
             _service = service;
         }
 
-        //[Route]
         public ActionResult Index()
         {
             return View(new HomeViewModel

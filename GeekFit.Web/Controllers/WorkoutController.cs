@@ -18,7 +18,6 @@ namespace GeekFit.Web.Controllers
             this.workoutService = workoutService;
         }
 
-        //[Route]
         public ActionResult List(Guid userId)
         {
             var minDate = DateTime.Now.AddDays(-28);
